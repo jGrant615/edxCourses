@@ -27,8 +27,8 @@ namespace edxCourse
             get { return _credits; }
             set { _credits = value; }
         }
-        private ArrayList _students = new ArrayList();
-        public ArrayList Students
+        private List<Student> _students = new List<Student>();
+        public List<Student> CourseRoster
         {
             get { return _students; }
             set { _students = value; }
@@ -83,10 +83,9 @@ namespace edxCourse
         }
         public void listStudents()
         {
-            foreach (Student s in Students)
+            foreach (Student s in CourseRoster)
             {
-                Student a = (Student)s;
-                Console.WriteLine("Student: {0} {1}", a.FirstName, a.LastName);
+                Console.WriteLine("Student: {0} {1}", s.FirstName, s.LastName);
             }
         }
     }
